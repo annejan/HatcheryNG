@@ -442,14 +442,14 @@ return [
         'enable' => true,
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy-Report-Only
-        'report-only' => false,
+        'report-only' => nv('APP_ENV') === 'local' || env('APP_ENV') === 'testing',
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to
         'report-to' => '',
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri
         'report-uri' => [
-            // uri
+            env('SENTRY_CSP_URI', null)
         ],
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/block-all-mixed-content
@@ -460,7 +460,7 @@ return [
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/base-uri
         'base-uri' => [
-            //
+            env('APP_URL', 'https://badge.team'),
         ],
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/child-src
@@ -470,22 +470,22 @@ return [
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/connect-src
         'connect-src' => [
-            //
+            'allow' => [env('APP_URL', 'https://badge.team'), 'self'],
         ],
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/default-src
         'default-src' => [
-            //
+            'allow' => [env('APP_URL', 'https://badge.team')],
         ],
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/font-src
         'font-src' => [
-            //
+            'allow' => [env('APP_URL', 'https://badge.team'), 'self'],
         ],
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/form-action
         'form-action' => [
-            //
+            'allow' => [env('APP_URL', 'https://badge.team'), 'self'],
         ],
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors
@@ -500,17 +500,17 @@ return [
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/img-src
         'img-src' => [
-            //
+            'allow' => [env('APP_URL', 'https://badge.team'), 'self'],
         ],
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/manifest-src
         'manifest-src' => [
-            //
+            'allow' => [env('APP_URL', 'https://badge.team'), 'self'],
         ],
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/media-src
         'media-src' => [
-            //
+            'allow' => [env('APP_URL', 'https://badge.team'), 'self'],
         ],
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/navigate-to
@@ -520,7 +520,7 @@ return [
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/object-src
         'object-src' => [
-            //
+            'allow' => [env('APP_URL', 'https://badge.team'), 'self'],
         ],
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/plugin-types
@@ -578,7 +578,7 @@ return [
             'report-sample' => false,
 
             'allow' => [
-                // 'url',
+                env('APP_URL', 'https://badge.team'),
             ],
 
             'schemes' => [
@@ -627,12 +627,19 @@ return [
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/style-src
         'style-src' => [
-            //
+            'allow' => [
+                env('APP_URL', 'https://badge.team'),
+                'https://fonts.googleapis.com',
+            ],
+
+            'self' => true,
+
+            'unsafe-inline' => true,
         ],
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/style-src-attr
         'style-src-attr' => [
-            //
+
         ],
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/style-src-elem
