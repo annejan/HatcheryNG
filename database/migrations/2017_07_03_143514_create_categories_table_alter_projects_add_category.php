@@ -26,7 +26,7 @@ class CreateCategoriesTableAlterProjectsAddCategory extends Migration
         Schema::table(
             'projects',
             function (Blueprint $table) {
-                $table->foreignId('category_id')->default(1)->after('id')->constrained();
+                $table->foreignId('category_id')->default(1)->after('id');
             }
         );
     }
