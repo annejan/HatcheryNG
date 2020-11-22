@@ -442,7 +442,7 @@ return [
         'enable' => true,
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy-Report-Only
-        'report-only' => nv('APP_ENV') === 'local' || env('APP_ENV') === 'testing',
+        'report-only' => env('APP_ENV') === 'local' || env('APP_ENV') === 'testing',
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to
         'report-to' => '',
