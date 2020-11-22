@@ -2,11 +2,37 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Carbon;
 use Laravel\Jetstream\Events\TeamCreated;
 use Laravel\Jetstream\Events\TeamDeleted;
 use Laravel\Jetstream\Events\TeamUpdated;
 use Laravel\Jetstream\Team as JetstreamTeam;
 
+/**
+ * App\Models\Team
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property string $name
+ * @property bool $personal_team
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property-read User $owner
+ * @property-read Collection|User[] $users
+ * @property-read int|null $users_count
+ * @method static Builder|Team newModelQuery()
+ * @method static Builder|Team newQuery()
+ * @method static Builder|Team query()
+ * @method static Builder|Team whereCreatedAt($value)
+ * @method static Builder|Team whereId($value)
+ * @method static Builder|Team whereName($value)
+ * @method static Builder|Team wherePersonalTeam($value)
+ * @method static Builder|Team whereUpdatedAt($value)
+ * @method static Builder|Team whereUserId($value)
+ * @mixin \Eloquent
+ */
 class Team extends JetstreamTeam
 {
     /**

@@ -2,8 +2,10 @@
 
 namespace App\Actions\Jetstream;
 
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 use Laravel\Jetstream\Contracts\AddsTeamMembers;
 use Laravel\Jetstream\Events\TeamMemberAdded;
 use Laravel\Jetstream\Jetstream;
@@ -14,11 +16,12 @@ class AddTeamMember implements AddsTeamMembers
     /**
      * Add a new team member to the given team.
      *
-     * @param  mixed  $user
-     * @param  mixed  $team
-     * @param  string  $email
-     * @param  string|null  $role
+     * @param mixed $user
+     * @param mixed $team
+     * @param string $email
+     * @param string|null $role
      * @return void
+     * @throws AuthorizationException
      */
     public function add($user, $team, string $email, string $role = null)
     {
@@ -37,10 +40,11 @@ class AddTeamMember implements AddsTeamMembers
     /**
      * Validate the add member operation.
      *
-     * @param  mixed  $team
-     * @param  string  $email
-     * @param  string|null  $role
+     * @param mixed $team
+     * @param string $email
+     * @param string|null $role
      * @return void
+     * @throws ValidationException
      */
     protected function validate($team, string $email, ?string $role)
     {

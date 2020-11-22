@@ -20,11 +20,16 @@
         "tightenco/ziggy": "^0.9.4"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.8",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.3.3"
+        "nunomaduro/larastan": "^0.6.9",
+        "pestphp/pest": "^0.3.12",
+        "pestphp/pest-plugin-laravel": "^0.3.0",
+        "phpunit/phpunit": "^9.3.3",
+        "vimeo/psalm": "^4.2"
     },
     "config": {
         "optimize-autoloader": true,
