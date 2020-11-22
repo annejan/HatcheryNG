@@ -4,6 +4,7 @@
 /public/css
 /public/js
 /storage/*.key
+/storage/api-docs/
 /vendor
 .env
 .env.backup

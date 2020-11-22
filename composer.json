@@ -1,39 +1,53 @@
 {
-    "name": "laravel/laravel",
-    "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel"
+    "name": "badgeteam/hatchery",
+    "description": "Hatchery micropython app repository . .",
+    "keywords": ["micropython", "badge", "repository"],
+    "authors": [
+        {
+            "name": "Anne Jan Brouwer",
+            "email": "brouwer@annejan.com",
+            "homepage": "https://annejan.com",
+            "role": "Developer"
+        }
     ],
+    "support": {
+        "email": "hatchery@badge.team",
+        "isseus": "https://github.com/BadgeTeam/HatcheryNG/issues"
+    },
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "ext-json": "*",
         "bepsvpt/secure-headers": "^7.0",
         "czproject/git-php": "^3.18",
+        "darkaonline/l5-swagger": "^8.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
-        "inertiajs/inertia-laravel": "^0.2.4",
+        "guzzlehttp/guzzle": "^7.2",
+        "inertiajs/inertia-laravel": "^0.2.15",
         "intervention/image": "^2.5",
-        "laravel/framework": "^8.12",
+        "laravel/framework": "^8.15",
+        "laravel/horizon": "^5.4",
         "laravel/jetstream": "^1.6",
-        "laravel/sanctum": "^2.6",
+        "laravel/sanctum": "^2.8",
         "laravel/tinker": "^2.5",
         "seld/jsonlint": "^1.8",
+        "sentry/sentry-laravel": "^2.2",
+        "spatie/laravel-backup": "^6.12",
+        "spatie/laravel-sitemap": "^5.8",
         "tightenco/ziggy": "^0.9.4",
         "verschuur/laravel-robotstxt": "^3.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.8",
         "facade/ignition": "^2.5",
-        "fakerphp/faker": "^1.9.1",
-        "mockery/mockery": "^1.4.2",
-        "nunomaduro/collision": "^5.0",
+        "fakerphp/faker": "^1.11",
+        "mockery/mockery": "^1.4",
+        "nunomaduro/collision": "^5.1",
         "nunomaduro/larastan": "^0.6.9",
         "pestphp/pest": "^0.3.12",
         "pestphp/pest-plugin-laravel": "^0.3.0",
-        "phpunit/phpunit": "^9.3.3",
+        "phpunit/phpunit": "^9.4",
         "vimeo/psalm": "^4.2"
     },
     "config": {
