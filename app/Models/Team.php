@@ -22,6 +22,7 @@ use Laravel\Jetstream\Team as JetstreamTeam;
  * @property-read User $owner
  * @property-read Collection|User[] $users
  * @property-read int|null $users_count
+ *
  * @method static Builder|Team newModelQuery()
  * @method static Builder|Team newQuery()
  * @method static Builder|Team query()
