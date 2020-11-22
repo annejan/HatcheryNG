@@ -31,6 +31,10 @@ use Laravel\Sanctum\PersonalAccessToken;
  * @property string|null $remember_token
  * @property int|null $current_team_id
  * @property string|null $profile_photo_path
+ * @property int $admin
+ * @property string $editor
+ * @property int $public
+ * @property int $show_projects
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property-read Team|null $currentTeam
@@ -43,7 +47,14 @@ use Laravel\Sanctum\PersonalAccessToken;
  * @property-read int|null $teams_count
  * @property-read Collection|PersonalAccessToken[] $tokens
  * @property-read int|null $tokens_count
- *
+ * @property-read Collection|Project[] $collaborations
+ * @property-read int|null $collaborations_count
+ * @property-read Collection|Project[] $projects
+ * @property-read int|null $projects_count
+ * @property-read Collection|Vote[] $votes
+ * @property-read int|null $votes_count
+ * @property-read Collection|Warning[] $warnings
+ * @property-read int|null $warnings_count
  * @method static Builder|User newModelQuery()
  * @method static Builder|User newQuery()
  * @method static Builder|User query()
@@ -59,6 +70,10 @@ use Laravel\Sanctum\PersonalAccessToken;
  * @method static Builder|User whereTwoFactorRecoveryCodes($value)
  * @method static Builder|User whereTwoFactorSecret($value)
  * @method static Builder|User whereUpdatedAt($value)
+ * @method static Builder|User whereAdmin($value)
+ * @method static Builder|User whereEditor($value)
+ * @method static Builder|User wherePublic($value)
+ * @method static Builder|User whereShowProjects($value)
  * @mixin \Eloquent
  */
 class User extends Authenticatable

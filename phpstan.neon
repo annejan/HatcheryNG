@@ -15,3 +15,4 @@ parameters:
         - routes/console.php
     ignoreErrors:
         - '#Parameter \#2 \$callback of function tap expects \(callable\(App\\Models\\User\): void\)\|null, Closure\(App\\Models\\User\): mixed given.#'
+        - '#Called .* on Laravel collection, but could have been retrieved as a query.#'

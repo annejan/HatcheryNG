@@ -9,15 +9,20 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "bepsvpt/secure-headers": "^7.0",
+        "czproject/git-php": "^3.18",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "inertiajs/inertia-laravel": "^0.2.4",
+        "intervention/image": "^2.5",
         "laravel/framework": "^8.12",
         "laravel/jetstream": "^1.6",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
-        "tightenco/ziggy": "^0.9.4"
+        "seld/jsonlint": "^1.8",
+        "tightenco/ziggy": "^0.9.4",
+        "verschuur/laravel-robotstxt": "^3.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.8",
