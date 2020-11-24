@@ -6,13 +6,8 @@ use App\Events\DownloadCounter;
 use App\Models\Badge;
 use App\Models\Category;
 use App\Models\Project;
-use App\Models\User;
 use App\Models\Version;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use Illuminate\View\View;
 use OpenApi\Annotations as OA;
 use stdClass;
 

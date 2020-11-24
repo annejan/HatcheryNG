@@ -9,6 +9,12 @@ use Illuminate\Console\Command;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 
+/**
+ * Class GenerateSitemap
+ *
+ * @package App\Console\Commands
+ * @author annejan@badge.team
+ */
 class GenerateSitemap extends Command
 {
     /**

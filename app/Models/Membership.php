@@ -7,7 +7,7 @@ use Illuminate\Support\Carbon;
 use Laravel\Jetstream\Membership as JetstreamMembership;
 
 /**
- * App\Models\Membership
+ * Class Membership.
  *
  * @property int $id
  * @property int $team_id

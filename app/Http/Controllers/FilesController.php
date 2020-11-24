@@ -2,20 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\FileStoreRequest;
-use App\Http\Requests\FileUpdateRequest;
-use App\Http\Requests\FileUploadRequest;
-use App\Jobs\LintContent;
-use App\Jobs\ProcessFile;
 use App\Models\File;
-use App\Models\Version;
-use App\Support\Linters;
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Http\UploadedFile;
 use Illuminate\View\Factory;
 use Illuminate\View\View;
 
