@@ -1,5 +1,8 @@
 # Badge.Team Hatchery 2.0
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/db09ec938590438be1d0/maintainability)](https://codeclimate.com/github/badgeteam/HatcheryNG/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/db09ec938590438be1d0/test_coverage)](https://codeclimate.com/github/badgeteam/HatcheryNG/test_coverage)
+[![Codecov](https://codecov.io/gh/badgeteam/HatcheryNG/branch/master/graph/badge.svg?token=SD4UCK9ETR)](https://codecov.io/gh/badgeteam/HatcheryNG)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9965611691634683a17ebd15fdb9f13e)](https://app.codacy.com/gh/badgeteam/HatcheryNG?utm_source=github.com&utm_medium=referral&utm_content=badgeteam/HatcheryNG&utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.com/badgeteam/HatcheryNG.svg)](https://travis-ci.com/badgeteam/HatcheryNG)
 [![Known Vulnerabilities](https://snyk.io/test/github/badgeteam/HatcheryNG/badge.svg)](https://snyk.io/test/github/badgeteam/HatcheryNG)

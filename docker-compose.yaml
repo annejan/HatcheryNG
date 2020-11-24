@@ -1,0 +1,62 @@
+version: '3'
+
+services:
+  laravel:
+    depends_on:
+      - mariadb
+      - redis
+    links:
+      - mariadb
+      - redis
+    tty: true
+    build: .
+    volumes:
+      - ./app:/app/app
+      - ./config:/app/config
+      - ./database:/app/database
+      - ./public:/app/public
+      - ./resources:/app/resources
+      - ./routes:/app/routes
+      - ./storage:/app/storage
+      - ./tests:/app/tests
+      - ./build:/app/build
+      - ./.git:/app/.git
+    ports:
+      - "8000:8000"
+    environment:
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      DB_DATABASE: badgeware
+      DB_USERNAME: badgeware
+      DB_PASSWORD: badgeware
+    networks:
+      - frontend
+      - backend
+    restart: unless-stopped
+
+  mariadb:
+    image: mariadb
+    volumes:
+      - ./database/mariadb:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: badgeware
+      MYSQL_USER: badgeware
+      MYSQL_PASSWORD: badgeware
+    networks:
+      - backend
+    restart: unless-stopped
+
+  redis:
+    image: redis
+    networks:
+      - backend
+    restart: unless-stopped
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+
+

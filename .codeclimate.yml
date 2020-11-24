@@ -1,0 +1,14 @@
+plugins:
+  sonar-php:
+    enabled: true
+    config:
+      tests_patterns:
+        - tests/**
+  scss-lint:
+    enabled: true
+  phpcodesniffer:
+    enabled: true
+  phpmd:
+    enabled: true
+  eslint:
+    enabled: true
