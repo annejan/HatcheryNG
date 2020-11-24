@@ -1,4 +1,4 @@
-name: Laravel feature testing and static analysis
+name: Laravel - feature testing and static analysis
 
 on:
   push:
