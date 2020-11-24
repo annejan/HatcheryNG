@@ -20,3 +20,8 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');
 })->name('dashboard');
+
+Route::resource('projects', 'ProjectsController', ['only' => ['index', 'show']]);
+Route::resource('badges', 'BadgesController', ['only' => ['index', 'show']]);
+Route::resource('files', 'FilesController', ['only' => 'show']);
+Route::get('download/{file}', 'FilesController@download')->name('files.download');

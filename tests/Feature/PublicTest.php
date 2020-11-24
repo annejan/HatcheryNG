@@ -530,4 +530,13 @@ class PublicTest extends TestCase
         $response->assertStatus(302)
             ->assertRedirect('/login');
     }
+
+    /**
+     * A basic test example.
+     */
+    public function testSwagger(): void
+    {
+        $response = $this->get('/api');
+        $response->assertStatus(200);
+    }
 }
