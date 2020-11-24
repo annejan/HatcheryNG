@@ -16,7 +16,7 @@
     },
     "license": "MIT",
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^7.3|^8.0",
         "ext-json": "*",
         "bepsvpt/secure-headers": "^7.0",
         "czproject/git-php": "^3.18",
@@ -41,6 +41,7 @@
     "require-dev": {
         "ext-dom": "*",
         "barryvdh/laravel-ide-helper": "^2.8",
+        "codeception/codeception": "^4.1",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.12",
         "mockery/mockery": "^1.4",

@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.com/badgeteam/HatcheryNG.svg)](https://travis-ci.com/badgeteam/HatcheryNG)
 [![Known Vulnerabilities](https://snyk.io/test/github/badgeteam/Hatchery/badge.svg)](https://snyk.io/test/github/badgeteam/Hatchery)
-[![Github Actions](https://github.com/badgeteam/HatcheryNG/workflows/Laravel%20feature%20testing%20and%20static%20analysis/badge.svg)](https://github.com/badgeteam/HatcheryNG/actions)
+[![Github Actions Laravel](https://github.com/badgeteam/HatcheryNG/workflows/Laravel%20feature%20testing%20and%20static%20analysis/badge.svg)](https://github.com/badgeteam/HatcheryNG/actions)
+[![Github Actions Node](https://github.com/badgeteam/HatcheryNG/workflows/Node%20-%20yarn%20build/badge.svg)](https://github.com/badgeteam/HatcheryNG/actions)
+[![CircleCI](https://circleci.com/gh/badgeteam/HatcheryNG.svg?style=svg)](https://circleci.com/gh/badgeteam/HatcheryNG)
 
 Simple micropython software repository for Badges.
 
@@ -13,7 +15,7 @@ Simple micropython software repository for Badges.
 
 ## Installation
 
--   Requires PHP 7.4 or later
+-   Requires PHP 7.3 or later
 -   Requires Python 3.6 or later
 -   Requires Node.js 6.0 or later
 -   Requires Redis 3.2 or later
