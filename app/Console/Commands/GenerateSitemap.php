@@ -68,7 +68,7 @@ class GenerateSitemap extends Command
             $sitemap->add(
                 Url::create(route('badges.show', $badge->slug))
                     ->setLastModificationDate($this->getLastUpdatedBadge($badge))
-                    ->setPriority(0.75)
+                    ->setPriority(0.6)
             );
         });
         $sitemap->writeToFile(public_path('sitemap.xml'));

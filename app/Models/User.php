@@ -32,12 +32,13 @@ use Laravel\Sanctum\PersonalAccessToken;
  * @property string|null $remember_token
  * @property int|null $current_team_id
  * @property string|null $profile_photo_path
- * @property int $admin
+ * @property bool $admin
  * @property string $editor
  * @property int $public
  * @property int $show_projects
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
  * @property-read Team|null $currentTeam
  * @property-read string $profile_photo_url
  * @property-read DatabaseNotificationCollection|DatabaseNotification[] $notifications
@@ -75,6 +76,10 @@ use Laravel\Sanctum\PersonalAccessToken;
  * @method static Builder|User whereEditor($value)
  * @method static Builder|User wherePublic($value)
  * @method static Builder|User whereShowProjects($value)
+ * @method static Builder|User whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|User onlyTrashed()
+ * @method static \Illuminate\Database\Query\Builder|User withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|User withoutTrashed()
  * @mixin \Eloquent
  */
 class User extends Authenticatable
@@ -116,6 +121,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'admin' => 'boolean'
     ];
 
     /**
