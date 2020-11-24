@@ -1,7 +1,7 @@
 # Badge.Team Hatchery 2.0
 
 [![Build Status](https://travis-ci.com/badgeteam/HatcheryNG.svg)](https://travis-ci.com/badgeteam/HatcheryNG)
-[![Known Vulnerabilities](https://snyk.io/test/github/badgeteam/Hatchery/badge.svg)](https://snyk.io/test/github/badgeteam/Hatchery)
+[![Known Vulnerabilities](https://snyk.io/test/github/badgeteam/HatcheryNG/badge.svg)](https://snyk.io/test/github/badgeteam/HatcheryNG)
 [![Github Actions Laravel](https://github.com/badgeteam/HatcheryNG/workflows/Laravel%20feature%20testing%20and%20static%20analysis/badge.svg)](https://github.com/badgeteam/HatcheryNG/actions)
 [![Github Actions Node](https://github.com/badgeteam/HatcheryNG/workflows/Node%20-%20yarn%20build/badge.svg)](https://github.com/badgeteam/HatcheryNG/actions)
 [![CircleCI](https://circleci.com/gh/badgeteam/HatcheryNG.svg?style=svg)](https://circleci.com/gh/badgeteam/HatcheryNG)

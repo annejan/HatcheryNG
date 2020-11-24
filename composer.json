@@ -1,7 +1,11 @@
 {
     "name": "badgeteam/hatchery",
     "description": "Hatchery micropython app repository . .",
-    "keywords": ["micropython", "badge", "repository"],
+    "keywords": [
+        "micropython",
+        "badge",
+        "repository"
+    ],
     "authors": [
         {
             "name": "Anne Jan Brouwer",
@@ -42,6 +46,9 @@
         "ext-dom": "*",
         "barryvdh/laravel-ide-helper": "^2.8",
         "codeception/codeception": "^4.1",
+        "codeception/module-asserts": "^1.3",
+        "codeception/module-laravel5": "^1.1",
+        "codeception/module-phpbrowser": "^1.0",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.12",
         "mockery/mockery": "^1.4",
