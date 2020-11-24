@@ -1,8 +1,8 @@
 # Badge.Team Hatchery 2.0
 
-[![Build Status](https://travis-ci.org/badgeteam/HatcheryNG.svg)](https://travis-ci.org/badgeteam/HatcheryNG)
+[![Build Status](https://travis-ci.com/badgeteam/HatcheryNG.svg)](https://travis-ci.com/badgeteam/HatcheryNG)
 [![Known Vulnerabilities](https://snyk.io/test/github/badgeteam/Hatchery/badge.svg)](https://snyk.io/test/github/badgeteam/Hatchery)
-[![Github Actions](https://github.com/badgeteam/HatcheryNG/workflows/Laravel/badge.svg)](https://github.com/badgeteam/HatcheryNG/actions)
+[![Github Actions](https://github.com/badgeteam/HatcheryNG/workflows/Laravel%20feature%20testing%20and%20static%20analysis/badge.svg)](https://github.com/badgeteam/HatcheryNG/actions)
 
 Simple micropython software repository for Badges.
 
