@@ -1,5 +1,5 @@
 {
-    "name": "badgeteam/HatcheryNG",
+    "name": "badgeteam/hatchery",
     "description": "Hatchery micropython app repository . .",
     "keywords": ["micropython", "badge", "repository"],
     "authors": [
