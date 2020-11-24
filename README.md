@@ -1,5 +1,6 @@
 # Badge.Team Hatchery 2.0
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9965611691634683a17ebd15fdb9f13e)](https://app.codacy.com/gh/badgeteam/HatcheryNG?utm_source=github.com&utm_medium=referral&utm_content=badgeteam/HatcheryNG&utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.com/badgeteam/HatcheryNG.svg)](https://travis-ci.com/badgeteam/HatcheryNG)
 [![Known Vulnerabilities](https://snyk.io/test/github/badgeteam/HatcheryNG/badge.svg)](https://snyk.io/test/github/badgeteam/HatcheryNG)
 [![Github Actions Laravel](https://github.com/badgeteam/HatcheryNG/workflows/Laravel%20feature%20testing%20and%20static%20analysis/badge.svg)](https://github.com/badgeteam/HatcheryNG/actions)
