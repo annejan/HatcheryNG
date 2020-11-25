@@ -72,11 +72,7 @@ make
 sudo make install
 ```
 
-If you would like to have Verilog support.
-
-Install [Icarus Verilog](https://iverilog.fandom.com/wiki/Installation_Guide) 0.9 or later.
-
-TODO more info ;)
+If you would like to have Verilog and nMigen support please read the [FPGA synthesis](docs/FPGA.md) documentation.
 
 ### Services
 
@@ -99,8 +95,8 @@ If you don't want to install things and do the above steps, Docker makes all the
 
 ```bash
 docker-compose up # -d for daemon mode
-docker exec -it hatchery_laravel_1 php artisan migrate --seed
-docker exec -it hatchery_laravel_1 yarn watch
+docker exec -it hatcheryng_laravel_1 php artisan migrate --seed
+docker exec -it hatcheryng_laravel_1 yarn watch
 ```
 
 Enjoy your Hatchery at <http://localhost:8000>
