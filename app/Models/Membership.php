@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 use Laravel\Jetstream\Membership as JetstreamMembership;
@@ -24,7 +25,7 @@ use Laravel\Jetstream\Membership as JetstreamMembership;
  * @method static Builder|Membership whereTeamId($value)
  * @method static Builder|Membership whereUpdatedAt($value)
  * @method static Builder|Membership whereUserId($value)
- * @mixin \Eloquent
+ * @mixin Eloquent
  */
 class Membership extends JetstreamMembership
 {

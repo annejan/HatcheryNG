@@ -6,6 +6,12 @@ use App\Models\Category;
 use App\Models\Project;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * Class ProjectFactory
+ *
+ * @author annejan@badge.team
+ * @package Database\Factories
+ */
 class ProjectFactory extends Factory
 {
     /**

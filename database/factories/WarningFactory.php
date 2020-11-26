@@ -6,6 +6,12 @@ use App\Models\Project;
 use App\Models\Warning;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * Class WarningFactory
+ *
+ * @author annejan@badge.team
+ * @package Database\Factories
+ */
 class WarningFactory extends Factory
 {
     /**

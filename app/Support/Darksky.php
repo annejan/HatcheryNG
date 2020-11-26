@@ -3,6 +3,7 @@
 namespace App\Support;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * Class Darksky.
@@ -14,7 +15,7 @@ class Darksky
     /**
      * @var Client
      */
-    private $client;
+    private Client $client;
 
     /**
      * Darksky constructor.
@@ -29,10 +30,9 @@ class Darksky
     /**
      * @param string $url
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @return string
-     *
      *
      * @codeCoverageIgnore
      */

@@ -23,11 +23,11 @@ class ProjectUpdated extends Event implements ShouldBroadcast
     use SerializesModels;
 
     /** @var Project */
-    public $project;
+    public Project $project;
     /** @var string|null */
-    public $message;
+    public ?string $message;
     /** @var string */
-    public $type;
+    public string $type;
 
     /**
      * Create a new event instance.
@@ -48,7 +48,7 @@ class ProjectUpdated extends Event implements ShouldBroadcast
      *
      * @return array<Channel>
      */
-    public function broadcastOn()
+    public function broadcastOn(): array
     {
         $whom = [new PrivateChannel('App.User.'.$this->project->user_id)];
 

@@ -17,7 +17,7 @@ class DownloadCounter
     /**
      * @var Project
      */
-    public $project;
+    public Project $project;
 
     /**
      * DownloadCounter constructor.

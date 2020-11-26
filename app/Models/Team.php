@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Carbon;
@@ -31,7 +32,7 @@ use Laravel\Jetstream\Team as JetstreamTeam;
  * @method static Builder|Team wherePersonalTeam($value)
  * @method static Builder|Team whereUpdatedAt($value)
  * @method static Builder|Team whereUserId($value)
- * @mixin \Eloquent
+ * @mixin Eloquent
  */
 class Team extends JetstreamTeam
 {

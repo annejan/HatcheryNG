@@ -22,7 +22,7 @@ class UserPolicy
      *
      * @return bool
      */
-    public function update(User $user, User $target)
+    public function update(User $user, User $target): bool
     {
         // Normal users can only change their own info
         return $user->admin || $user->id == $target->id;
@@ -36,7 +36,7 @@ class UserPolicy
      *
      * @return bool
      */
-    public function delete(User $user, User $target)
+    public function delete(User $user, User $target): bool
     {
         // Normal users can only delete their own info
         return $user->admin || $user->id == $target->id;

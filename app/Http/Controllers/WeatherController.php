@@ -17,15 +17,18 @@ use stdClass;
  */
 class WeatherController extends Controller
 {
-    private $client;
+    /**
+     * @var Darksky
+     */
+    private Darksky $client;
     /**
      * @var int
      */
-    private $minutes = 10; // max 144 requests/day per location ;)
+    private int $minutes = 10; // max 144 requests/day per location ;)
     /**
      * @var string
      */
-    private $url = '';
+    private string $url = '';
 
     /**
      * WeatherController constructor.

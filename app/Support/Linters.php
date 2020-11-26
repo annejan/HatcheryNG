@@ -17,7 +17,7 @@ class Linters
      *
      * @return array<string|int, string|int|null>
      */
-    public static function lintFile(File $file, $content = null)
+    public static function lintFile(File $file, $content = null): array
     {
         $command = 'pyflakes';
         if ($file->extension === 'md') {

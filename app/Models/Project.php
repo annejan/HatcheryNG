@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Support\Helpers;
+use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -84,7 +85,7 @@ use Illuminate\Support\Str;
  * @method static Builder|Project withoutTrashed()
  * @method static Builder|Project whereMaxFirmware($value)
  * @method static Builder|Project whereMinFirmware($value)
- * @mixin \Eloquent
+ * @mixin Eloquent
  */
 class Project extends Model
 {

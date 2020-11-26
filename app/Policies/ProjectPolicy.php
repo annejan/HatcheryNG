@@ -22,7 +22,7 @@ class ProjectPolicy
      *
      * @return bool
      */
-    public function index()
+    public function index(): bool
     {
         // Everybody can list projects
         return true;
@@ -33,7 +33,7 @@ class ProjectPolicy
      *
      * @return bool
      */
-    public function create()
+    public function create(): bool
     {
         // Everybody can create projects
         return true;
@@ -47,7 +47,7 @@ class ProjectPolicy
      *
      * @return bool
      */
-    public function update(User $user, Project $project)
+    public function update(User $user, Project $project): bool
     {
         // Normal users can only change projects they collaborate on
         return $user->admin || $user->id == $project->user_id || $project->collaborators()
@@ -62,7 +62,7 @@ class ProjectPolicy
      *
      * @return bool
      */
-    public function delete(User $user, Project $project)
+    public function delete(User $user, Project $project): bool
     {
         // Normal users can only delete their own projects
         return  $user->admin || $user->id == $project->user_id;
@@ -76,7 +76,7 @@ class ProjectPolicy
      *
      * @return bool
      */
-    public function rename(User $user, Project $project)
+    public function rename(User $user, Project $project): bool
     {
         // Ony admin users can rename projects
         return  $user->admin;
@@ -90,7 +90,7 @@ class ProjectPolicy
      *
      * @return bool
      */
-    public function pull(User $user, Project $project)
+    public function pull(User $user, Project $project): bool
     {
         if ($project->git === null) {
             return false;   // No git, no pull

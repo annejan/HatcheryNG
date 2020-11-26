@@ -6,6 +6,12 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
+/**
+ * Class UserFactory
+ *
+ * @author annejan@badge.team
+ * @package Database\Factories
+ */
 class UserFactory extends Factory
 {
     /**

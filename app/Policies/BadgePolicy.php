@@ -21,7 +21,7 @@ class BadgePolicy
      *
      * @return bool
      */
-    public function index()
+    public function index(): bool
     {
         // Everybody can list badges
         return true;
@@ -34,7 +34,7 @@ class BadgePolicy
      *
      * @return bool
      */
-    public function create(User $user)
+    public function create(User $user): bool
     {
         // Only admin users
         return $user->admin;
@@ -47,7 +47,7 @@ class BadgePolicy
      *
      * @return bool
      */
-    public function update(User $user)
+    public function update(User $user): bool
     {
         // Only admin users
         return $user->admin;
@@ -60,7 +60,7 @@ class BadgePolicy
      *
      * @return bool
      */
-    public function delete(User $user)
+    public function delete(User $user): bool
     {
         // Only admin users
         return $user->admin;

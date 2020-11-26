@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Support\Helpers;
+use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -53,7 +54,7 @@ use Intervention\Image\Facades\Image;
  * @method static Builder|File whereVersionId($value)
  * @method static Builder|File withTrashed()
  * @method static Builder|File withoutTrashed()
- * @mixin \Eloquent
+ * @mixin Eloquent
  */
 class File extends Model
 {

@@ -6,6 +6,12 @@ use App\Models\Project;
 use App\Models\Version;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * Class VersionFactory
+ *
+ * @author annejan@badge.team
+ * @package Database\Factories
+ */
 class VersionFactory extends Factory
 {
     /**

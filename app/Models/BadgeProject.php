@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -28,7 +29,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|BadgeProject whereProjectId($value)
  * @method static Builder|BadgeProject whereStatus($value)
  * @method static Builder|BadgeProject whereUpdatedAt($value)
- * @mixin \Eloquent
+ * @mixin Eloquent
  */
 class BadgeProject extends Model
 {
@@ -44,7 +45,7 @@ class BadgeProject extends Model
      *
      * @var array<string, string>
      */
-    public static $states = [
+    public static array $states = [
         'working'     => 'Working',
         'in_progress' => 'In progress',
         'broken'      => 'Broken',
