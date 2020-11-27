@@ -63,7 +63,7 @@ class Warning extends Model
         parent::boot();
 
         static::creating(
-            function ($warning) {
+            function($warning) {
                 if ($warning->user_id === null) {
                     $user = Auth::guard()->user();
                     $warning->user()->associate($user);

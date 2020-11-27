@@ -93,7 +93,7 @@ class ProjectPolicy
     public function pull(User $user, Project $project): bool
     {
         if ($project->git === null) {
-            return false;   // No git, no pull
+            return false; // No git, no pull
         }
         // Normal users can only pull their own projects or projects they collaborate on
         return  $user->admin || $user->id == $project->user_id || $project->collaborators()

@@ -53,7 +53,7 @@ class Badge extends Model
         parent::boot();
 
         static::saving(
-            function ($badge) {
+            function($badge) {
                 $badge->slug = Str::slug($badge->name, '_');
             }
         );

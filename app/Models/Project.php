@@ -166,7 +166,7 @@ class Project extends Model
         parent::boot();
 
         static::creating(
-            function ($project) {
+            function($project) {
                 if ($project->user_id === null) {
                     $user = Auth::guard()->user();
                     $project->user()->associate($user);
@@ -175,7 +175,7 @@ class Project extends Model
         );
 
         static::created(
-            function ($project) {
+            function($project) {
                 $version = new Version();
                 $version->revision = 1;
                 $version->project()->associate($project);
@@ -192,7 +192,7 @@ class Project extends Model
         );
 
         static::saving(
-            function ($project) {
+            function($project) {
                 $project->slug = Str::slug($project->name, '_');
                 if (self::isForbidden($project->slug)) {
                     throw new \Exception('reserved name');

@@ -65,7 +65,7 @@ class Vote extends Model
         parent::boot();
 
         static::creating(
-            function ($vote) {
+            function($vote) {
                 if ($vote->user_id === null) {
                     $user = Auth::guard()->user();
                     $vote->user()->associate($user);

@@ -70,7 +70,7 @@ class Category extends Model
         parent::boot();
 
         static::saving(
-            function ($project) {
+            function($project) {
                 $project->slug = Str::slug($project->name, '_');
             }
         );
@@ -105,7 +105,7 @@ class Category extends Model
     {
         return $this->projects()->whereHas(
             'versions',
-            function ($query) {
+            function($query) {
                 $query->whereNotNull('zip');
             }
         )->count();

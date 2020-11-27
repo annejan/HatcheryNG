@@ -45,7 +45,7 @@ class ProjectsController extends Controller
 
         if ($search) {
             $projects = $projects->where(
-                function (Builder $query) use ($search) {
+                function(Builder $query) use ($search) {
                     $query->where('name', 'like', '%'.$search.'%');
                     // @todo perhaps search in README ?
                 }

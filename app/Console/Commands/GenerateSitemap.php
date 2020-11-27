@@ -63,14 +63,14 @@ class GenerateSitemap extends Command
                     ->setLastModificationDate($this->getLastUpdatedBadge())
             );
 
-        Project::all()->each(function (Project $project) use ($sitemap) {
+        Project::all()->each(function(Project $project) use ($sitemap) {
             $sitemap->add(
                 Url::create(route('projects.show', $project->slug))
                 ->setLastModificationDate($this->getLastUpdated($project))
                 ->setPriority(0.5)
             );
         });
-        Badge::all()->each(function (Badge $badge) use ($sitemap) {
+        Badge::all()->each(function(Badge $badge) use ($sitemap) {
             $sitemap->add(
                 Url::create(route('badges.show', $badge->slug))
                     ->setLastModificationDate($this->getLastUpdatedBadge($badge))

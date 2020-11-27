@@ -172,7 +172,7 @@ class File extends Model
         parent::boot();
 
         static::creating(
-            function ($file) {
+            function($file) {
                 if ($file->user_id === null) {
                     $user = Auth::guard()->user();
                     $file->user()->associate($user);

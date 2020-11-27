@@ -86,7 +86,7 @@ class PublicController extends Controller
         return response()->json(
             Project::whereHas(
                 'versions',
-                function ($query) {
+                function($query) {
                     $query->published();
                 }
             )->orderBy('id', 'DESC')->get(),
@@ -122,7 +122,7 @@ class PublicController extends Controller
         return response()->json(
             Project::whereHas(
                 'versions',
-                function ($query) {
+                function($query) {
                     $query->published();
                 }
             )->where('name', 'like', $what)
@@ -159,7 +159,7 @@ class PublicController extends Controller
         return response()->json(
             $category->projects()->whereHas(
                 'versions',
-                function ($query) {
+                function($query) {
                     $query->published();
                 }
             )->orderBy('id', 'DESC')->get(),
@@ -204,7 +204,7 @@ class PublicController extends Controller
         return response()->json(
             $badge->projects()->whereHas(
                 'versions',
-                function ($query) {
+                function($query) {
                     $query->published();
                 }
             )->orderBy('id', 'DESC')->get(),
@@ -242,7 +242,7 @@ class PublicController extends Controller
         return response()->json(
             $badge->projects()->whereHas(
                 'versions',
-                function ($query) {
+                function($query) {
                     $query->published();
                 }
             )->where('name', 'like', $what)
@@ -275,12 +275,12 @@ class PublicController extends Controller
         foreach (Category::where('hidden', false)->get() as $category) {
             $eggs = $category->projects()->whereHas(
                 'badges',
-                function ($query) use ($badge) {
+                function($query) use ($badge) {
                     $query->where('slug', $badge->slug);
                 }
             )->whereHas(
                 'versions',
-                function ($query) {
+                function($query) {
                     $query->whereNotNull('zip');
                 }
             );
@@ -322,12 +322,12 @@ class PublicController extends Controller
         return response()->json(
             $badge->projects()->whereHas(
                 'category',
-                function ($query) use ($category) {
+                function($query) use ($category) {
                     $query->where('slug', $category->slug);
                 }
             )->whereHas(
                 'versions',
-                function ($query) {
+                function($query) {
                     $query->published();
                 }
             )->orderBy('id', 'DESC')->get(),
