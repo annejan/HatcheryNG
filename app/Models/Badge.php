@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\SlugRouting;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -10,7 +11,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Str;
 
 /**
  * Class Badge.
@@ -22,8 +22,8 @@ use Illuminate\Support\Str;
  * @property string|null $constraints
  * @property string|null $commands
  * @property Carbon|null $deleted_at
- * @property Carbon $created_at
- * @property Carbon $updated_at
+ * @property Carbon      $created_at
+ * @property Carbon      $updated_at
  * @property-read Collection|Project[] $projects
  * @property-read int|null $projects_count
  * @property-read Collection|BadgeProject[] $states
@@ -44,20 +44,7 @@ use Illuminate\Support\Str;
 class Badge extends Model
 {
     use HasFactory;
-
-    /**
-     * Generate a slug on save.
-     */
-    public static function boot(): void
-    {
-        parent::boot();
-
-        static::saving(
-            function($badge) {
-                $badge->slug = Str::slug($badge->name, '_');
-            }
-        );
-    }
+    use SlugRouting;
 
     /**
      * @return BelongsToMany
@@ -73,15 +60,5 @@ class Badge extends Model
     public function states(): HasMany
     {
         return $this->hasMany(BadgeProject::class);
-    }
-
-    /**
-     * Get the route key for the model.
-     *
-     * @return string
-     */
-    public function getRouteKeyName(): string
-    {
-        return 'slug';
     }
 }

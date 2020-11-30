@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\AssignUser;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,7 +10,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Auth;
 
 /**
  * Class Vote.
@@ -21,8 +21,8 @@ use Illuminate\Support\Facades\Auth;
  * @property string      $type
  * @property string|null $comment
  * @property Carbon|null $deleted_at
- * @property Carbon $created_at
- * @property Carbon $updated_at
+ * @property Carbon      $created_at
+ * @property Carbon      $updated_at
  * @property-read Project $project
  * @property-read User $user
  * @method static bool|null forceDelete()
@@ -47,6 +47,7 @@ class Vote extends Model
 {
     use SoftDeletes;
     use HasFactory;
+    use AssignUser;
 
     /**
      * The attributes that are mass assignable.
@@ -56,33 +57,6 @@ class Vote extends Model
     protected $fillable = [
         'project_id', 'type',
     ];
-
-    /**
-     * Make sure a user is assigned.
-     */
-    public static function boot(): void
-    {
-        parent::boot();
-
-        static::creating(
-            function($vote) {
-                if ($vote->user_id === null) {
-                    $user = Auth::guard()->user();
-                    $vote->user()->associate($user);
-                }
-            }
-        );
-    }
-
-    /**
-     * Get the User that owns this Vote.
-     *
-     * @return BelongsTo
-     */
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
 
     /**
      * Get the Project that this Vote is for.

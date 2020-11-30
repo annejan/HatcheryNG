@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\SlugRouting;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -10,7 +11,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Str;
 
 /**
  * Class Category.
@@ -20,8 +20,8 @@ use Illuminate\Support\Str;
  * @property string      $name
  * @property string      $slug
  * @property Carbon|null $deleted_at
- * @property Carbon $created_at
- * @property Carbon $updated_at
+ * @property Carbon      $created_at
+ * @property Carbon      $updated_at
  * @property bool        $hidden
  * @property-read int $eggs
  * @property-read Collection|Project[] $projects
@@ -47,6 +47,7 @@ class Category extends Model
 {
     use SoftDeletes;
     use HasFactory;
+    use SlugRouting;
 
     /**
      * Hidden attributes.
@@ -63,20 +64,6 @@ class Category extends Model
     protected $appends = ['eggs'];
 
     /**
-     * Boot function to create slug from name upon saving.
-     */
-    public static function boot(): void
-    {
-        parent::boot();
-
-        static::saving(
-            function($project) {
-                $project->slug = Str::slug($project->name, '_');
-            }
-        );
-    }
-
-    /**
      * Get the Projects that belong to this Category has.
      *
      * @return HasMany
@@ -84,16 +71,6 @@ class Category extends Model
     public function projects(): HasMany
     {
         return $this->hasMany(Project::class);
-    }
-
-    /**
-     * Get the route key for the model.
-     *
-     * @return string
-     */
-    public function getRouteKeyName(): string
-    {
-        return 'slug';
     }
 
     /**

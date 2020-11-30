@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\AssignUser;
 use App\Support\Helpers;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
@@ -10,7 +11,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Exception\NotReadableException;
 use Intervention\Image\Facades\Image;
 
@@ -24,8 +24,8 @@ use Intervention\Image\Facades\Image;
  * @property string      $name
  * @property mixed|null  $content
  * @property Carbon|null $deleted_at
- * @property Carbon $created_at
- * @property Carbon $updated_at
+ * @property Carbon      $created_at
+ * @property Carbon      $updated_at
  * @property-read bool $editable
  * @property-read bool $lintable
  * @property-read bool $processable
@@ -60,6 +60,7 @@ class File extends Model
 {
     use SoftDeletes;
     use HasFactory;
+    use AssignUser;
 
     /**
      * Supported extensions.
@@ -165,23 +166,6 @@ class File extends Model
     protected $fillable = ['name', 'version_id', 'content'];
 
     /**
-     * Make sure a file is owned by a user.
-     */
-    public static function boot(): void
-    {
-        parent::boot();
-
-        static::creating(
-            function($file) {
-                if ($file->user_id === null) {
-                    $user = Auth::guard()->user();
-                    $file->user()->associate($user);
-                }
-            }
-        );
-    }
-
-    /**
      * Get the Project Version this File belongs to.
      *
      * @return BelongsTo
@@ -189,16 +173,6 @@ class File extends Model
     public function version(): BelongsTo
     {
         return $this->belongsTo(Version::class);
-    }
-
-    /**
-     * Get the User that owns the Project.
-     *
-     * @return BelongsTo
-     */
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
     }
 
     /**

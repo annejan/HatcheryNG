@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\AssignUser;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -11,7 +12,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Auth;
 
 /**
  * Class Version.
@@ -25,8 +25,8 @@ use Illuminate\Support\Facades\Auth;
  * @property int|null    $size_of_zip
  * @property string|null $git_commit_id
  * @property Carbon|null $deleted_at
- * @property Carbon $created_at
- * @property Carbon $updated_at
+ * @property Carbon      $created_at
+ * @property Carbon      $updated_at
  * @property-read Collection|File[] $files
  * @property-read int|null $files_count
  * @property-read bool $published
@@ -58,6 +58,7 @@ class Version extends Model
 {
     use SoftDeletes;
     use HasFactory;
+    use AssignUser;
 
     /**
      * Appended magic data.
@@ -74,23 +75,6 @@ class Version extends Model
     protected $hidden = ['git_commit_id'];
 
     /**
-     * Make sure a user is assigned.
-     */
-    public static function boot(): void
-    {
-        parent::boot();
-
-        static::creating(
-            function($version) {
-                if ($version->user_id === null) {
-                    $user = Auth::guard()->user();
-                    $version->user()->associate($user);
-                }
-            }
-        );
-    }
-
-    /**
      * Get the Project this Version belongs to.
      */
     public function project(): BelongsTo
@@ -104,16 +88,6 @@ class Version extends Model
     public function files(): HasMany
     {
         return $this->hasMany(File::class);
-    }
-
-    /**
-     * Get the User that owns the Project.
-     *
-     * @return BelongsTo
-     */
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
     }
 
     /**
