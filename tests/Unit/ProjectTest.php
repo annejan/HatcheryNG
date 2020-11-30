@@ -8,6 +8,7 @@ use App\Models\BadgeProject;
 use App\Models\Category;
 use App\Models\File;
 use App\Models\Project;
+use App\Models\Team;
 use App\Models\User;
 use App\Models\Version;
 use App\Models\Vote;
@@ -405,5 +406,31 @@ class ProjectTest extends TestCase
         $this->be($user);
         $project = Project::factory()->create();
         $this->assertEquals('Unknown', $project->author);
+    }
+
+    /**
+     * Assert the Project has a relation with collaborator Teams.
+     */
+    public function testProjectTeamsRelationship(): void
+    {
+        $user = User::factory()->create();
+        $team = Team::factory()->create();
+        $this->be($user);
+        $project = Project::factory()->create();
+        $this->assertEmpty($project->teams);
+        $project->teams()->attach($team);
+        /** @var Project $project */
+        $project = Project::find($project->id);
+        $this->assertInstanceOf(Collection::class, $project->teams);
+        $this->assertInstanceOf(Team::class, $project->teams->first());
+        /** @var Team $firstTeam */
+        $firstTeam = $project->teams->first();
+        $this->assertEquals($team->id, $firstTeam->id);
+        $this->assertCount(1, $project->teams);
+        $anotherTeam = Team::factory()->create();
+        $project->teams()->attach($anotherTeam);
+        /** @var Project $project */
+        $project = Project::find($project->id);
+        $this->assertCount(2, $project->teams);
     }
 }
