@@ -9,7 +9,7 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
  *
  * @OA\Info(
  *   title="Hatchery by badge.team",
- *   version="0.2",
+ *   version="2.0",
  *   description="Simple micropython software repository for Badges.",
  * @OA\Contact(
  *     name="Hatchery",

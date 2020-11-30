@@ -13,7 +13,7 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
  *   / /_/ / _` | __/ __| '_ \ / _ \ '__| | | |/  \/ / /_\/
  *  / __  / (_| | || (__| | | |  __/ |  | |_| / /\  / /_\\
  *  \/ /_/ \__,_|\__\___|_| |_|\___|_|   \__, \_\ \/\____/
- *             badge.team                |___/
+ *             badge.team                |___/   2020
  *
  * @package App\Console
  */
