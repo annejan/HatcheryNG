@@ -4,13 +4,14 @@ namespace App\Events;
 
 use App\Models\Project;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Event;
 
 /**
  * Class DownloadCounter.
  *
  * @author annejan@badge.team
  */
-class DownloadCounter
+class DownloadCounter extends Event
 {
     use SerializesModels;
 
