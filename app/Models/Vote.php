@@ -21,8 +21,8 @@ use Illuminate\Support\Facades\Auth;
  * @property string      $type
  * @property string|null $comment
  * @property Carbon|null $deleted_at
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
  * @property-read Project $project
  * @property-read User $user
  * @method static bool|null forceDelete()

@@ -6,6 +6,8 @@ use App\Models\File;
 use App\Models\User;
 use App\Models\Version;
 use App\Support\Helpers;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -17,6 +19,11 @@ use Illuminate\Support\Str;
  * @author annejan@badge.team
  */
 trait ProjectAttributes {
+    abstract function versions(): HasMany;
+    abstract function votes(): HasMany;
+    abstract function category(): BelongsTo;
+    abstract function states(): HasMany;
+
     /**
      * Forbidden names for apps.
      *
@@ -202,22 +209,12 @@ trait ProjectAttributes {
     }
 
     /**
-     * @return Version
+     * @param string $slug
+     *
+     * @return bool
      */
-    public function getUnpublishedVersion(): Version
+    public static function isForbidden(string $slug): bool
     {
-        $version = $this->versions()->unPublished()->first();
-        if ($version === null) {
-            /** @var Version $previousVersion */
-            $previousVersion = $this->versions->last();
-            $revision = $previousVersion->revision + 1;
-            $version = new Version();
-            $version->user_id = $this->user_id;
-            $version->revision = $revision;
-            $version->project()->associate($this);
-            $version->save();
-        }
-
-        return $version;
+        return in_array($slug, self::$forbidden);
     }
 }

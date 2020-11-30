@@ -22,8 +22,8 @@ use Illuminate\Support\Str;
  * @property string|null $constraints
  * @property string|null $commands
  * @property Carbon|null $deleted_at
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
  * @property-read Collection|Project[] $projects
  * @property-read int|null $projects_count
  * @property-read Collection|BadgeProject[] $states

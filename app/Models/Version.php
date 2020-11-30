@@ -25,8 +25,8 @@ use Illuminate\Support\Facades\Auth;
  * @property int|null    $size_of_zip
  * @property string|null $git_commit_id
  * @property Carbon|null $deleted_at
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
  * @property-read Collection|File[] $files
  * @property-read int|null $files_count
  * @property-read bool $published

@@ -20,8 +20,8 @@ use Laravel\Jetstream\Team as JetstreamTeam;
  * @property int $user_id
  * @property string $name
  * @property bool $personal_team
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
  * @property-read User $owner
  * @property-read Collection|User[] $users
  * @property-read int|null $users_count

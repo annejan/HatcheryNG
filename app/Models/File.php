@@ -24,8 +24,8 @@ use Intervention\Image\Facades\Image;
  * @property string      $name
  * @property mixed|null  $content
  * @property Carbon|null $deleted_at
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
  * @property-read bool $editable
  * @property-read bool $lintable
  * @property-read bool $processable

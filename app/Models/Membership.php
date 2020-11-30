@@ -14,8 +14,8 @@ use Laravel\Jetstream\Membership as JetstreamMembership;
  * @property int $team_id
  * @property int $user_id
  * @property string|null $role
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
  * @method static Builder|Membership newModelQuery()
  * @method static Builder|Membership newQuery()
  * @method static Builder|Membership query()

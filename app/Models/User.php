@@ -37,8 +37,8 @@ use Laravel\Sanctum\PersonalAccessToken;
  * @property string $editor
  * @property int $public
  * @property int $show_projects
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
  * @property Carbon|null $deleted_at
  * @property-read Team|null $currentTeam
  * @property-read string $profile_photo_url

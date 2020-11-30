@@ -319,12 +319,22 @@ class Project extends Model
     }
 
     /**
-     * @param string $slug
-     *
-     * @return bool
+     * @return Version
      */
-    public static function isForbidden(string $slug)
+    public function getUnpublishedVersion(): Version
     {
-        return in_array($slug, self::$forbidden);
+        $version = $this->versions()->unPublished()->first();
+        if ($version === null) {
+            /** @var Version $previousVersion */
+            $previousVersion = $this->versions->last();
+            $revision = $previousVersion->revision + 1;
+            $version = new Version();
+            $version->user_id = $this->user_id;
+            $version->revision = $revision;
+            $version->project()->associate($this);
+            $version->save();
+        }
+
+        return $version;
     }
 }

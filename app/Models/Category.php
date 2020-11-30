@@ -20,8 +20,8 @@ use Illuminate\Support\Str;
  * @property string      $name
  * @property string      $slug
  * @property Carbon|null $deleted_at
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
  * @property bool        $hidden
  * @property-read int $eggs
  * @property-read Collection|Project[] $projects
