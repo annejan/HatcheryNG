@@ -73,6 +73,15 @@ class Team extends JetstreamTeam
     ];
 
     /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'projects',
+    ];
+
+    /**
      * Team projects.
      *
      * @return BelongsToMany
@@ -80,5 +89,13 @@ class Team extends JetstreamTeam
     public function projects(): BelongsToMany
     {
         return $this->belongsToMany(Project::class)->withTimestamps();
+    }
+
+    /**
+     * @return Project[]|Collection
+     */
+    public function getProjectsAttribute()
+    {
+        return $this->projects()->get();
     }
 }

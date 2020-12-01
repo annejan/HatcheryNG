@@ -52,12 +52,19 @@ class JetstreamServiceProvider extends ServiceProvider
             'read',
             'update',
             'delete',
+            'publish',
         ])->description('Administrator users can perform any action.');
 
-        Jetstream::role('editor', 'Editor', [
+        Jetstream::role('developer', 'Developer', [
             'read',
             'create',
             'update',
-        ])->description('Editor users have the ability to read, create, and update.');
+            'publish',
+        ])->description('Developers have the ability to create and edit files, update projects and publish new versions.');
+
+        Jetstream::role('editor', 'Editor', [
+            'read',
+            'update',
+        ])->description('Editors can edit files and projects.');
     }
 }
