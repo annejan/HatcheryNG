@@ -29,9 +29,7 @@ class WarningFactory extends Factory
     public function definition()
     {
         return [
-            'project_id' => function () {
-                return Project::factory();
-            },
+            'project_id' => Project::factory(),
             'description' => $this->faker->paragraph,
         ];
     }

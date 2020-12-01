@@ -29,9 +29,7 @@ class FileFactory extends Factory
     public function definition()
     {
         return [
-            'version_id' => function () {
-                return Version::factory();
-            },
+            'version_id' => Version::factory(),
             'name'    => $this->faker->word.'.py',
             'content' => $this->faker->paragraph,
         ];

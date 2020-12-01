@@ -30,9 +30,7 @@ class VersionFactory extends Factory
     {
         return [
             'revision'   => 1,
-            'project_id' => function () {
-                return Project::factory();
-            },
+            'project_id' => Project::factory(),
         ];
     }
 }

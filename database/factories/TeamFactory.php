@@ -30,9 +30,7 @@ class TeamFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'user_id' => function () {
-                return User::factory();
-            },
+            'user_id' => User::factory(),
             'personal_team' => false,
         ];
     }
