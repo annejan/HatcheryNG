@@ -323,6 +323,7 @@ class Project extends Model
      */
     public function getUnpublishedVersion(): Version
     {
+	/** @var Version|null $version */
         $version = $this->versions()->unPublished()->first();
         if ($version === null) {
             /** @var Version $previousVersion */

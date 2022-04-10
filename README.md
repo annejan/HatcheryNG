@@ -5,11 +5,6 @@
 [![Codecov](https://codecov.io/gh/badgeteam/HatcheryNG/branch/master/graph/badge.svg?token=SD4UCK9ETR)](https://codecov.io/gh/badgeteam/HatcheryNG)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9965611691634683a17ebd15fdb9f13e)](https://app.codacy.com/gh/badgeteam/HatcheryNG?utm_source=github.com&utm_medium=referral&utm_content=badgeteam/HatcheryNG&utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.com/badgeteam/HatcheryNG.svg)](https://travis-ci.com/badgeteam/HatcheryNG)
-[![Known Vulnerabilities](https://snyk.io/test/github/badgeteam/HatcheryNG/badge.svg)](https://snyk.io/test/github/badgeteam/HatcheryNG)
-[![CircleCI](https://circleci.com/gh/badgeteam/HatcheryNG.svg?style=svg)](https://circleci.com/gh/badgeteam/HatcheryNG)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/badgeteam/HatcheryNG/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/badgeteam/HatcheryNG/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/badgeteam/HatcheryNG/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/badgeteam/HatcheryNG/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/badgeteam/HatcheryNG/badges/build.png?b=master)](https://scrutinizer-ci.com/g/badgeteam/HatcheryNG/build-status/master)
 [![Github Actions Node](https://github.com/badgeteam/HatcheryNG/workflows/Node%20-%20yarn%20build/badge.svg)](https://github.com/badgeteam/HatcheryNG/actions)
 [![Github Actions Laravel](https://github.com/badgeteam/HatcheryNG/workflows/Laravel%20-%20feature%20testing%20and%20static%20analysis/badge.svg)](https://github.com/badgeteam/HatcheryNG/actions)
 

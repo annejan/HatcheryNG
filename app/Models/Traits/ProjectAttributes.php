@@ -2,6 +2,7 @@
 
 namespace App\Models\Traits;
 
+use App\Models\Category;
 use App\Models\File;
 use App\Models\User;
 use App\Models\Version;
@@ -87,9 +88,10 @@ trait ProjectAttributes {
     {
         if ($this->category()->first() === null) {
             return 'uncategorised';
-        }
-
-        return $this->category()->first()->slug;
+	}
+	/** @var Category $category */
+	$category = $this->category()->first();
+	return $category->slug;
     }
 
     /**
